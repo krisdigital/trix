@@ -14,10 +14,12 @@
     <script type="text/javascript" src="trix.js"></script>
     <script type="text/javascript" src="trix/inspector.js"></script>
     <script type="text/javascript">
+      Trix.config.blockAttributes.default = {tagName: "p"};
+      
       document.addEventListener("trix-initialize", function(event) {
         Trix.Inspector.install(event.target);
       });
-
+      
       document.addEventListener("trix-change", function(event) {
         document.getElementById("formatted-content").innerHTML = event.target.value;
       });
